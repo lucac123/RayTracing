@@ -6,3 +6,7 @@
 
 # Ignore ppm files
 *.ppm
+
+# Ignore jpg files
+*.jpg
+*.jpeg
