@@ -4,11 +4,14 @@
 #include "vec3.h"
 
 #include <iostream>
+#include <cstring>
 
-void write_color(std::ostream& out, color pixel_color) {
-	out << static_cast<int>(pixel_color.x())
-		<< static_cast<int>(pixel_color.y())
-		<< static_cast<int>(pixel_color.z());
+unsigned char *write_color(unsigned char *buf, color pixel_color) {
+	buf[0] = static_cast<int>(pixel_color.x() * 255.999f);
+	buf[1] = static_cast<int>(pixel_color.y() * 255.999f);
+	buf[2] = static_cast<int>(pixel_color.z() * 255.999f);
+
+	return buf+3;
 }
 
 #endif
